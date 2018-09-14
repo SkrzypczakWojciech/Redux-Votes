@@ -4,8 +4,8 @@ import React from 'react';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const EDIT_COMMENT = 'EDIT_COMMENT';
-export const THUMB_UP_COMMENT = 'THUMB_UP_COMMENT';
-export const THUMB_DOWN_COMMENT = 'THUMB_DOWN_COMMENT';
+export const THUMB_UP = 'THUMB_UP';
+export const THUMB_DOWN = 'THUMB_DOWN';
 
 function addComment(text) {
     return {
@@ -14,18 +14,12 @@ function addComment(text) {
         id: uuid.v4()
     }
 }
-
-dispatch(addComment('nowy komentarz!'));
-
 function removeComment(id) {
     return {
     	type: REMOVE_COMMENT,
         id
     }
 }
-
-dispatch(removeComment(3));
-
 function editComment(text,id) {
     return {
         type: EDIT_COMMENT,
@@ -34,22 +28,15 @@ function editComment(text,id) {
     }
 }
 
-dispatch(editComment('edytuje komentarz',3));
-
 function thumbUp(id) {
     return {
-        type:THUMB_UP_COMMENT,
+        type:THUMB_UP,
         id
     }
 }
-
-dispatch(thumbUp(3));
-
 function thumbDown(id) {
     return {
-        type: THUMB_DOWN_COMMENT,
+        type: THUMB_DOWN,
         id
     }
 }
-
-dispatch(thumbDown(3));
